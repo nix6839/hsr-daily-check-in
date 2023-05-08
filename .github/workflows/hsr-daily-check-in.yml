@@ -29,4 +29,4 @@ jobs:
         env:
           LTOKEN: ${{ secrets.LTOKEN }}
           LTUID: ${{ secrets.LTUID }}
-          LANG: ${{ null }}
+          LANG: ${{ vars.LANG }}
