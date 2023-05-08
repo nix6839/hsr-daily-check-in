@@ -1,0 +1,30 @@
+{
+  "name": "hsr-daily-check-in",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "preinstall": "playwright install",
+    "dev": "cross-env NODE_ENV=development tsup --watch",
+    "build": "cross-env NODE_ENV=production tsup",
+    "start": "cross-env NODE_ENV=production node dist/main.js",
+    "type-check": "tsc",
+    "format": "prettier --write \"**/*.{ts,cjs,json,yml}\""
+  },
+  "dependencies": {
+    "axios": "1.4.0",
+    "playwright": "1.33.0",
+    "zod": "3.21.4"
+  },
+  "devDependencies": {
+    "@nix6839/prettier-config": "1.0.8",
+    "@types/node": "18.16.5",
+    "@types/prettier": "2.7.2",
+    "cross-env": "7.0.3",
+    "prettier": "2.8.8",
+    "tsup": "6.7.0",
+    "typescript": "5.0.4"
+  },
+  "packageManager": "pnpm@8.4.0"
+}
