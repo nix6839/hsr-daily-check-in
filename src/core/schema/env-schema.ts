@@ -4,8 +4,8 @@ import type { ParseParams, ZodErrorMap } from 'zod';
 
 const envSchema = object({
   NODE_ENV: zEnum(['development', 'production']),
-  LTOKEN: string(),
-  LTUID: string(),
+  LTOKEN: string().nonempty(),
+  LTUID: string().nonempty(),
   LANG: zEnum([
     'zh-cn',
     'zh-tw',
@@ -22,19 +22,24 @@ const envSchema = object({
     'th-th',
     'tr-tr',
     'vi-vn',
-  ]).default('en-us'),
+    '',
+  ])
+    .transform((arg) => (arg === '' ? undefined : arg))
+    .default('en-us'),
 });
 
 const errorMap: ZodErrorMap = (issue, ctx) => {
   const propertyName = issue.path.at(0);
 
   if (propertyName === 'LTOKEN' || propertyName === 'LTUID') {
-    if (issue.code === ZodIssueCode.invalid_type) {
-      if (issue.received === 'undefined') {
-        return {
-          message: `Please provide the GitHub secret "${propertyName}".`,
-        };
-      }
+    if (
+      (issue.code === ZodIssueCode.invalid_type &&
+        issue.received === 'undefined') ||
+      issue.code === ZodIssueCode.too_small
+    ) {
+      return {
+        message: `Please provide the GitHub secret "${propertyName}".`,
+      };
     }
   }
 
