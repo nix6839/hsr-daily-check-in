@@ -9,7 +9,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "forceConsistentCasingInFileNames": true,
 
-    "moduleResolution": "nodenext",
+    "moduleResolution": "Bundler",
     "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
 
