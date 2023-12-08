@@ -2,5 +2,5 @@
 const regexCharsRegex = /[\\^$*+?.()|[\]{}]/g;
 
 export default function escapeRegex(str: string): string {
-  return str.replace(regexCharsRegex, '\\$&');
+	return str.replace(regexCharsRegex, '\\$&');
 }

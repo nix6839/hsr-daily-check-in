@@ -1,26 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "es2022",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+	"compilerOptions": {
+		"target": "es2022",
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
 
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"forceConsistentCasingInFileNames": true,
 
-    "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true,
-    "resolveJsonModule": true,
+		"moduleResolution": "Bundler",
+		"verbatimModuleSyntax": true,
+		"resolveJsonModule": true,
 
-    "paths": {
-      "@core/*": ["./src/core/*"],
-      "@lib/*": ["./src/lib/*"]
-    },
+		"paths": {
+			"@core/*": ["./src/core/*"],
+			"@lib/*": ["./src/lib/*"]
+		},
 
-    "noEmit": true,
+		"noEmit": true,
 
-    "skipLibCheck": true,
-    "incremental": true
-  }
+		"skipLibCheck": true,
+		"incremental": true
+	}
 }
